@@ -5,6 +5,7 @@ A application that unifies various user accounts to visualize a person's life --
 ## Stack
 
 - [React](https://reactjs.org/) - Frontend application development
+- [Material-UI](https://material-ui.com/) - React components, and application styles.
 
 ## Development Tooling
 
