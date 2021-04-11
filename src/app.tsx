@@ -1,7 +1,8 @@
 import React from "react";
 import "fontsource-roboto";
-import BusinessIcon from "@material-ui/icons/Business";
-import Typography from "@material-ui/core/Typography";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import routes from "./routes";
+import RouteWrapper from "./route-wrapper";
 
 const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -9,12 +10,13 @@ const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
 
     return (
-        <>
-            <Typography variant="h1">
-                <BusinessIcon color="primary" />
-                Nutshell
-            </Typography>
-        </>
+        <Router>
+            <Switch>
+                {routes.map((route, i) => (
+                    <RouteWrapper route={route} key={i} {...route} />
+                ))}
+            </Switch>
+        </Router>
     );
 
     // #endregion Render
