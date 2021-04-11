@@ -1,4 +1,8 @@
 .githooks
 node_modules
-dist
+public
 *.md
+*.local
+*.log
+*.firestore
+*.github

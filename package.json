@@ -11,11 +11,13 @@
         "build": "tsc --pretty && npm run lint && vite build",
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "serve": "vite preview",
-        "test": "jest"
+        "test": "jest",
+        "deploy": "npm run build && firebase deploy"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",
         "@material-ui/icons": "^4.11.2",
+        "firebase": "^8.3.3",
         "fontsource-roboto": "^4.0.0",
         "react": "^17.0.0",
         "react-dom": "^17.0.0"

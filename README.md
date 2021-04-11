@@ -4,10 +4,14 @@
 
 A application that unifies various user accounts to visualize a person's life -- in a nutshell.
 
+**[Live Site](https://nutshell-me.web.app)**
+
+
 ## Stack
 
 - [React](https://reactjs.org/) - Frontend application development
-- [Material-UI](https://material-ui.com/) - React components, and application styles.
+- [Material-UI](https://material-ui.com/) - React components, and application styles
+- [Firebase](https://console.firebase.google.com/project/nutshell-me/overview) - database, storage, hosting provider
 
 ## Development Tooling
 
