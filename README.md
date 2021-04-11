@@ -1,5 +1,6 @@
 # nutshell.me
 [![Build Status](https://travis-ci.org/HeyKos/nutshell.me.svg?branch=main)](https://travis-ci.org/HeyKos/nutshell.me)
+[![codecov](https://codecov.io/gh/HeyKos/nutshell.me/branch/main/graph/badge.svg?token=XI01Q1A5XD)](https://codecov.io/gh/HeyKos/nutshell.me)
 
 A application that unifies various user accounts to visualize a person's life -- in a nutshell.
 
