@@ -1,4 +1,5 @@
 # nutshell.me
+[![Build Status](https://travis-ci.org/HeyKos/nutshell.me.svg?branch=main)](https://travis-ci.org/HeyKos/nutshell.me)
 
 A application that unifies various user accounts to visualize a person's life -- in a nutshell.
 
@@ -14,3 +15,4 @@ A application that unifies various user accounts to visualize a person's life --
 - [ESLint](https://eslint.org/) - Typescript linting
 - [Prettier](https://prettier.io/) - Code autoformatting
 - [Jest](https://jestjs.io/) - Unit testing
+- [Travis CI](https://travis-ci.org/github/HeyKos/nutshell.me) - Build, test, and deploy automation

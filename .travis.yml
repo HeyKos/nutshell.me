@@ -1,0 +1,15 @@
+version: "~> 1.0"
+language: node_js
+node_js:
+    - 14
+os:
+    - osx
+install:
+    - npm install -g codecov
+before_script:
+    - npm install
+script:
+    - npm run build
+branches:
+    only:
+        - main
