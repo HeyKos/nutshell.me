@@ -9,6 +9,8 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc --pretty && npm run lint && vite build",
+        "coverage": "jest --coverage",
+        "coverage-report": "jest --coverage && codecov --disable=gcov",
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "serve": "vite preview",
         "test": "jest",

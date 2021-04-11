@@ -6,3 +6,5 @@ public
 *.log
 *.firestore
 *.github
+coverage
+.nyc_output

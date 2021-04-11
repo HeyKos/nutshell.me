@@ -4,3 +4,5 @@ public
 *.local
 *.log
 .firebase
+coverage
+.nyc_output
