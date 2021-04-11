@@ -11,7 +11,8 @@
         "build": "tsc --pretty && npm run lint && vite build",
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "serve": "vite preview",
-        "test": "jest"
+        "test": "jest",
+        "deploy": "npm run build && firebase deploy"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",
