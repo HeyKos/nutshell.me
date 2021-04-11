@@ -8,13 +8,14 @@ name: Build and Deploy on Push
       - main
 jobs:
   build_and_deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install and Build
         # run: npm ci && npm run build && npm run test && npm run coverage && npm run build-storybook
-        run: npm ci && npm run build && npm run test && npm run coverage
+        run: npm ci && npm run build
       - name: Update Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
