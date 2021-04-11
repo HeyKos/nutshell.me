@@ -13,3 +13,4 @@ A application that unifies various user accounts to visualize a person's life --
 - [TypeScript](https://www.typescriptlang.org/) - Typing, and javascript transpiling
 - [ESLint](https://eslint.org/) - Typescript linting
 - [Prettier](https://prettier.io/) - Code autoformatting
+- [Jest](https://jestjs.io/) - Unit testing
