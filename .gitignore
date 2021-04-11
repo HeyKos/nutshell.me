@@ -1,8 +1,17 @@
+# Node
 node_modules
-.DS_Store
+
+# Build directories
 public
-*.local
-*.log
-.firebase
 coverage
-.nyc_output
+docs-build
+
+# Log files
+*.log
+
+# Firebase
+.firebase
+
+# Misc
+.DS_Store
+*.local

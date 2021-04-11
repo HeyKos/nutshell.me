@@ -7,4 +7,4 @@ public
 *.firestore
 *.github
 coverage
-.nyc_output
+docs-build
