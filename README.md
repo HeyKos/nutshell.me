@@ -4,13 +4,13 @@ A application that unifies various user accounts to visualize a person's life --
 
 ## Stack
 
--   [React](https://reactjs.org/) - Frontend application development
--   [Material-UI](https://material-ui.com/) - React components, and application styles.
+- [React](https://reactjs.org/) - Frontend application development
+- [Material-UI](https://material-ui.com/) - React components, and application styles.
 
 ## Development Tooling
 
--   [Vite](https://vitejs.dev/) - Development server & Frontend tooling
--   [TypeScript](https://www.typescriptlang.org/) - Typing, and javascript transpiling
--   [ESLint](https://eslint.org/) - Typescript linting
--   [Prettier](https://prettier.io/) - Code autoformatting
--   [Jest](https://jestjs.io/) - Unit testing
+- [Vite](https://vitejs.dev/) - Development server & Frontend tooling
+- [TypeScript](https://www.typescriptlang.org/) - Typing, and javascript transpiling
+- [ESLint](https://eslint.org/) - Typescript linting
+- [Prettier](https://prettier.io/) - Code autoformatting
+- [Jest](https://jestjs.io/) - Unit testing
