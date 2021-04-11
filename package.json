@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "tsc --pretty && npm run lint && vite build",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
