@@ -1,0 +1,4 @@
+.githooks
+node_modules
+dist
+*.md
