@@ -17,3 +17,4 @@ A application that unifies various user accounts to visualize a person's life --
 - [Prettier](https://prettier.io/) - Code autoformatting
 - [Jest](https://jestjs.io/) - Unit testing
 - [Travis CI](https://travis-ci.org/github/HeyKos/nutshell.me) - Build, test, and deploy automation
+- [Codecov](https://app.codecov.io/gh/HeyKos/nutshell.me) - Code coverage reporting for automated tests
