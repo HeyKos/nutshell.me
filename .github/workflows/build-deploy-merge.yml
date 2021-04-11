@@ -1,4 +1,4 @@
-name: Build and Deploy on Push
+name: Build and Deploy on Merge
 'on':
   push:
     branches:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install and Build
-        run: npm ci &&  && npm run test && npm run coverage && npm run build-storybook
+        run: npm ci &&  npm run build && npm run test && npm run coverage && npm run build-storybook
       - name: Update Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
