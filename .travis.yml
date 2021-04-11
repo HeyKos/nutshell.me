@@ -13,4 +13,3 @@ script:
 branches:
     only:
         - main
-        - feature/travisci
