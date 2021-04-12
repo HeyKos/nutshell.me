@@ -5,8 +5,6 @@ node_modules
 public
 coverage
 docs-build
-docs/*
-!docs/.gitkeep
 
 # Log files
 *.log
