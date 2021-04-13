@@ -14,8 +14,9 @@ A application that unifies various user accounts to visualize a person's life --
 - [Material-UI](https://material-ui.com/) - React components, and application styles
 - [Firebase](https://console.firebase.google.com/project/nutshell-me/overview) - database, storage, hosting provider
 
-## Development Tooling
+## Developer Guide
 
+### Development Tooling
 - [Vite](https://vitejs.dev/) - Development server & Frontend tooling
 - [TypeScript](https://www.typescriptlang.org/) - Typing, and javascript transpiling
 - [ESLint](https://eslint.org/) - Typescript linting
@@ -24,3 +25,14 @@ A application that unifies various user accounts to visualize a person's life --
 - [Github Actions](https://github.com/HeyKos/nutshell.me/actions) - Build, test, and deploy automation
 - [Codecov](https://app.codecov.io/gh/HeyKos/nutshell.me) - Code coverage reporting for automated tests
 - [Storybook](https://storybook.js.org/) - React component library
+
+### Prerequisites
+1. Download and install [NodeJS version 14.x](https://nodejs.org/en/download/).
+2. Create a `.env` file (using [.env.sample](.env.sample) as a guide), and set the values from the firebase app ([guide](https://support.google.com/firebase/answer/7015592)).
+3. Run `npm install`
+
+### Active Development
+
+```
+npm run dev
+```
