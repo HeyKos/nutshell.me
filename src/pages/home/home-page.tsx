@@ -2,6 +2,8 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import BusinessIcon from "@material-ui/icons/Business";
 import Button from "@material-ui/core/Button";
+import firebase from "../../firebase-init";
+import "firebase/auth";
 
 const HomePage: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -13,7 +15,20 @@ const HomePage: React.FC = () => {
     };
 
     const authenticateWithGoogle = () => {
-        // Login with google here.
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        firebase
+            .auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+                const credential = result.credential;
+                const user = result.user;
+                console.log("credential", credential?.toJSON());
+                console.log("user", user?.toJSON());
+            })
+            .catch((error) => {
+                console.log("Login error", error);
+            });
     };
 
     // #endregion Functions
