@@ -14,7 +14,10 @@
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "serve": "vite preview",
         "test": "jest",
-        "deploy": "npm run build && firebase deploy"
+        "deploy": "npm run build && firebase deploy",
+        "docz:dev": "docz dev",
+        "docz:build": "docz build",
+        "docz:serve": "docz build && docz serve"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",

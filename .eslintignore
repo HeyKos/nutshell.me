@@ -8,4 +8,4 @@ public
 *.github
 coverage
 docs-build
-docs
+.docz
