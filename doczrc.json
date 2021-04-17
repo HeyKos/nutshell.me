@@ -1,0 +1,6 @@
+{
+    "dest": "docs-build",
+    "port": 6006,
+    "source": "src",
+    "typescript": true
+}
