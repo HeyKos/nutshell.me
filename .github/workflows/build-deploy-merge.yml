@@ -11,7 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install and Build
-        run: npm ci &&  npm run build && npm run test && npm run coverage && npm run build-storybook
+        ###### Remove until issue 26 is resolved. (https://github.com/HeyKos/nutshell.me/issues/26)
+        # run: npm ci &&  npm run build && npm run test && npm run coverage && npm run build-storybook
+        run: npm ci &&  npm run build && npm run test && npm run coverage
       - name: Update Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
