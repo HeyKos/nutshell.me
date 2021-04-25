@@ -1,8 +1,8 @@
 import React from "react";
 import "fontsource-roboto";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import routes from "./routes";
-import RouteWrapper from "./route-wrapper";
+import routes from "routes";
+import RouteWrapper from "route-wrapper";
 
 const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import BusinessIcon from "@material-ui/icons/Business";
 import Button from "@material-ui/core/Button";
-import firebase from "../../firebase-init";
+import firebase from "firebase-init";
 import "firebase/auth";
 
 const HomePage: React.FC = () => {
