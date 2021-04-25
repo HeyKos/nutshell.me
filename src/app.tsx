@@ -3,6 +3,7 @@ import "fontsource-roboto";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import routes from "routes";
 import RouteWrapper from "route-wrapper";
+import { AuthenticationProvider } from "authentication-provider";
 
 const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -10,13 +11,15 @@ const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
 
     return (
-        <Router>
-            <Switch>
-                {routes.map((route, i) => (
-                    <RouteWrapper route={route} key={i} {...route} />
-                ))}
-            </Switch>
-        </Router>
+        <AuthenticationProvider>
+            <Router>
+                <Switch>
+                    {routes.map((route, i) => (
+                        <RouteWrapper route={route} key={i} {...route} />
+                    ))}
+                </Switch>
+            </Router>
+        </AuthenticationProvider>
     );
 
     // #endregion Render
