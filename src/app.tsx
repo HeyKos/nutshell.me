@@ -1,9 +1,10 @@
 import React from "react";
 import "fontsource-roboto";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
-import routes from "routes";
-import RouteWrapper from "route-wrapper";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthenticationProvider } from "authentication-provider";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import ApplicationLayout from "templates/application-layout";
+import HomePage from "pages/home/home-page";
 
 const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -12,12 +13,15 @@ const App: React.FC = () => {
 
     return (
         <AuthenticationProvider>
+            <CssBaseline />
             <Router>
-                <Switch>
-                    {routes.map((route, i) => (
-                        <RouteWrapper route={route} key={i} {...route} />
-                    ))}
-                </Switch>
+                <ApplicationLayout>
+                    <Switch>
+                        <Route path="/">
+                            <HomePage />
+                        </Route>
+                    </Switch>
+                </ApplicationLayout>
             </Router>
         </AuthenticationProvider>
     );

@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import BusinessIcon from "@material-ui/icons/Business";
 import Button from "@material-ui/core/Button";
 import firebase from "firebase-init";
 import "firebase/auth";
@@ -39,10 +38,7 @@ const HomePage: React.FC = () => {
 
     return (
         <>
-            <Typography variant="h1">
-                <BusinessIcon color="primary" />
-                Nutshell
-            </Typography>
+            <Typography variant="h1">Nutshell</Typography>
             <div>
                 <Button
                     variant="contained"
