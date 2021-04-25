@@ -36,19 +36,7 @@ const HomePage: React.FC = () => {
     // #region Render
     // -----------------------------------------------------------------------------------------
 
-    return (
-        <>
-            <Typography variant="h1">Nutshell</Typography>
-            <div>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={onLoginClick}>
-                    Login
-                </Button>
-            </div>
-        </>
-    );
+    return <Typography variant="h1">Nutshell</Typography>;
 
     // #endregion Render
 };
