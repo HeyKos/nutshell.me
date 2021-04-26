@@ -1,8 +1,10 @@
 import React from "react";
 import "fontsource-roboto";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
-import routes from "./routes";
-import RouteWrapper from "./route-wrapper";
+import { BrowserRouter as Router } from "react-router-dom";
+import { AuthenticationProvider } from "authentication-provider";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import ApplicationLayout from "templates/application-layout";
+import Routes from "routes";
 
 const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -10,13 +12,14 @@ const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
 
     return (
-        <Router>
-            <Switch>
-                {routes.map((route, i) => (
-                    <RouteWrapper route={route} key={i} {...route} />
-                ))}
-            </Switch>
-        </Router>
+        <AuthenticationProvider>
+            <CssBaseline />
+            <Router>
+                <ApplicationLayout>
+                    <Routes />
+                </ApplicationLayout>
+            </Router>
+        </AuthenticationProvider>
     );
 
     // #endregion Render

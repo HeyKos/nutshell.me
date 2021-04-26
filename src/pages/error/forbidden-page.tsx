@@ -1,14 +1,14 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 
-const HomePage: React.FC = () => {
+const ForbiddenPage: React.FC = () => {
     // ---------------------------------------------------x--------------------------------------
     // #region Render
     // -----------------------------------------------------------------------------------------
 
-    return <Typography variant="h1">Home Page</Typography>;
+    return <Typography variant="h1">Forbidden</Typography>;
 
     // #endregion Render
 };
 
-export default HomePage;
+export default ForbiddenPage;
