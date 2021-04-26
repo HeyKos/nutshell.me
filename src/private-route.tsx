@@ -6,19 +6,17 @@ const PrivateRoute: React.FC<RouteProps> = (props: RouteProps) => {
     const { isAuthenticated } = useContext(AuthenticationContext);
 
     return (
-        <>
-            {isAuthenticated && <Route>{props.children}</Route>}
+        <Route>
+            {isAuthenticated && props.children}
             {!isAuthenticated && (
-                <Route>
-                    <Redirect
-                        to={{
-                            pathname: "/",
-                            state: { from: props.location },
-                        }}
-                    />
-                </Route>
+                <Redirect
+                    to={{
+                        pathname: "/",
+                        state: { from: props.location },
+                    }}
+                />
             )}
-        </>
+        </Route>
     );
 };
 
