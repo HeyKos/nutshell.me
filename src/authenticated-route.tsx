@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Redirect, Route, RouteProps } from "react-router-dom";
 import { AuthenticationContext } from "authentication-provider";
 
-const PrivateRoute: React.FC<RouteProps> = (props: RouteProps) => {
+const AuthenticatedRoute: React.FC<RouteProps> = (props: RouteProps) => {
     const { isAuthenticated } = useContext(AuthenticationContext);
 
     return (
@@ -20,4 +20,4 @@ const PrivateRoute: React.FC<RouteProps> = (props: RouteProps) => {
     );
 };
 
-export default PrivateRoute;
+export default AuthenticatedRoute;

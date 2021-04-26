@@ -3,7 +3,7 @@ import "fontsource-roboto";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "pages/home/home-page";
 import AdminPage from "pages/admin/admin-page";
-import PrivateRoute from "private-route";
+import AuthenticatedRoute from "authenticated-route";
 
 const Routes: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -15,9 +15,9 @@ const Routes: React.FC = () => {
             <Route exact path="/">
                 <HomePage />
             </Route>
-            <PrivateRoute path="/admin">
+            <AuthenticatedRoute path="/admin">
                 <AdminPage />
-            </PrivateRoute>
+            </AuthenticatedRoute>
         </Switch>
     );
 
