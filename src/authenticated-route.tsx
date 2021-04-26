@@ -11,7 +11,7 @@ const AuthenticatedRoute: React.FC<RouteProps> = (props: RouteProps) => {
             {!isAuthenticated && (
                 <Redirect
                     to={{
-                        pathname: "/",
+                        pathname: "/forbidden",
                         state: { from: props.location },
                     }}
                 />

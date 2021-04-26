@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import HomePage from "pages/home/home-page";
 import AdminPage from "pages/admin/admin-page";
 import AuthenticatedRoute from "authenticated-route";
+import ForbiddenPage from "pages/error/forbidden-page";
 
 const Routes: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -18,6 +19,9 @@ const Routes: React.FC = () => {
             <AuthenticatedRoute path="/admin">
                 <AdminPage />
             </AuthenticatedRoute>
+            <Route exact path="/forbidden">
+                <ForbiddenPage />
+            </Route>
         </Switch>
     );
 
