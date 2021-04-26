@@ -1,19 +1,25 @@
 import React, { useContext } from "react";
-import { Route } from "react-router-dom";
-import { AuthenticationContext } from "./authentication-provider";
+import { Redirect, Route, RouteProps } from "react-router-dom";
+import { AuthenticationContext } from "authentication-provider";
 
-export interface PrivateRouteProps extends Route {
-    component: React.FC;
-}
-
-const PrivateRoute: React.FC<PrivateRouteProps> = (
-    props: PrivateRouteProps
-) => {
+const PrivateRoute: React.FC<RouteProps> = (props: RouteProps) => {
     const { isAuthenticated } = useContext(AuthenticationContext);
-    // TODO: Update to redirect to sign in page once created.
-    const routeComponent = isAuthenticated ? props.component : undefined;
 
-    return <Route {...props} component={routeComponent} />;
+    return (
+        <>
+            {isAuthenticated && <Route>{props.children}</Route>}
+            {!isAuthenticated && (
+                <Route>
+                    <Redirect
+                        to={{
+                            pathname: "/",
+                            state: { from: props.location },
+                        }}
+                    />
+                </Route>
+            )}
+        </>
+    );
 };
 
 export default PrivateRoute;
