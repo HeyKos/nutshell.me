@@ -61,7 +61,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = (
                             <ButtonBase>
                                 <Avatar
                                     alt="nutshell.me logo"
-                                    src="https://via.placeholder.com/40"
+                                    src="/src/assets/images/logo.svg"
                                 />
                             </ButtonBase>
                             <Typography variant="h6">nutshell.me</Typography>
