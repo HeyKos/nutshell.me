@@ -1,8 +1,10 @@
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import colors from "constants/colors";
+import colors from "theme/colors";
+import sizes from "theme/sizes";
 
 const theme = createMuiTheme({
     palette: {
+        type: "light",
         primary: {
             main: colors.primary,
         },
@@ -22,25 +24,25 @@ const theme = createMuiTheme({
         h1: {
             color: colors.tertiary,
             textTransform: "uppercase",
-            fontSize: "4rem",
+            fontSize: sizes.largest,
             fontWeight: "normal",
         },
         h2: {
-            fontSize: "3rem",
+            fontSize: sizes.larger,
             fontWeight: "bold",
         },
         h3: {
-            fontSize: "2rem",
+            fontSize: sizes.large,
         },
         h4: {
-            fontSize: "2rem",
+            fontSize: sizes.large,
             fontWeight: "lighter",
         },
         h5: {
-            fontSize: "1rem",
+            fontSize: sizes.medium,
         },
         h6: {
-            fontSize: "1rem",
+            fontSize: sizes.medium,
             fontWeight: "lighter",
         },
         button: {
@@ -51,6 +53,16 @@ const theme = createMuiTheme({
         },
         body2: {
             fontWeight: "lighter",
+        },
+    },
+    overrides: {
+        MuiButton: {
+            contained: {
+                backgroundColor: colors.white,
+                "&:hover": {
+                    backgroundColor: colors.secondary,
+                },
+            },
         },
     },
 });
