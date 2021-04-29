@@ -1,25 +1,26 @@
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import colors from "constants/colors";
 
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: "#40C6CC",
+            main: colors.primary,
         },
         secondary: {
-            main: "#D6C37E",
+            main: colors.secondary,
         },
         text: {
-            primary: "#231F1D",
-            secondary: "#8C5A40",
+            primary: colors.black,
+            secondary: colors.tertiary,
         },
         background: {
-            default: "#F7F9F8",
+            default: colors.white,
         },
     },
     typography: {
         fontFamily: ["Montserrat", "sans-serif"].join(","),
         h1: {
-            color: "#8C5A40",
+            color: colors.tertiary,
             textTransform: "uppercase",
             fontSize: "4rem",
             fontWeight: "normal",
