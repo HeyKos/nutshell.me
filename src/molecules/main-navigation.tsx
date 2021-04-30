@@ -64,7 +64,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = (
                                     src="/src/assets/images/logo.svg"
                                 />
                             </ButtonBase>
-                            <Typography variant="h6">nutshell.me</Typography>
+                            <Typography variant="h5">nutshell.me</Typography>
                         </Grid>
                     </Grid>
 

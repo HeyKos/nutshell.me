@@ -5,6 +5,8 @@ import { AuthenticationProvider } from "authentication-provider";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import ApplicationLayout from "templates/application-layout";
 import Routes from "routes";
+import { ThemeProvider } from "@material-ui/styles";
+import theme from "theme/theme";
 
 const App: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -13,12 +15,14 @@ const App: React.FC = () => {
 
     return (
         <AuthenticationProvider>
-            <CssBaseline />
-            <Router>
-                <ApplicationLayout>
-                    <Routes />
-                </ApplicationLayout>
-            </Router>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Router>
+                    <ApplicationLayout>
+                        <Routes />
+                    </ApplicationLayout>
+                </Router>
+            </ThemeProvider>
         </AuthenticationProvider>
     );
 
