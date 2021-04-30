@@ -3,6 +3,7 @@ import "fontsource-roboto";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "pages/home/home-page";
 import AdminPage from "pages/admin/admin-page";
+import ProfilePage from "pages/profile/profile-page";
 import AuthenticatedRoute from "authenticated-route";
 import ForbiddenPage from "pages/error/forbidden-page";
 
@@ -18,6 +19,9 @@ const Routes: React.FC = () => {
             </Route>
             <AuthenticatedRoute path="/admin">
                 <AdminPage />
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/profile">
+                <ProfilePage />
             </AuthenticatedRoute>
             <Route exact path="/forbidden">
                 <ForbiddenPage />
