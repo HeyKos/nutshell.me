@@ -5,6 +5,7 @@ import HomePage from "pages/home/home-page";
 import AdminPage from "pages/admin/admin-page";
 import ProfilePage from "pages/profile/profile-page";
 import AuthenticatedRoute from "authenticated-route";
+import StravaAuthPage from "pages/auth/strava-auth-page";
 import ForbiddenPage from "pages/error/forbidden-page";
 
 const Routes: React.FC = () => {
@@ -22,6 +23,9 @@ const Routes: React.FC = () => {
             </AuthenticatedRoute>
             <AuthenticatedRoute path="/profile">
                 <ProfilePage />
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/auth/strava">
+                <StravaAuthPage />
             </AuthenticatedRoute>
             <Route exact path="/forbidden">
                 <ForbiddenPage />
