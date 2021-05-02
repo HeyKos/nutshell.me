@@ -1,21 +1,19 @@
 import { Result } from "models/result";
 import axios from "axios";
 import stravaConfig from "strava-config";
+import { AuthTokenRequestData, AuthTokenResponse } from "types/strava-types";
 
 // -----------------------------------------------------------------------------------------
 // #region Functions
 // -----------------------------------------------------------------------------------------}
 
-const getAuthToken = async (authCode: string): Promise<Result<string>> => {
+const getAuthToken = async (
+    authCode: string
+): Promise<Result<AuthTokenResponse>> => {
     try {
         const response = await axios.post(
             "https://www.strava.com/oauth/token",
-            {
-                client_id: stravaConfig.clientId,
-                client_secret: stravaConfig.clientSecret,
-                code: authCode,
-                grant_type: "authorization_code",
-            }
+            _getAuthTokenRequestData(authCode)
         );
 
         if (response.status !== 200) {
@@ -28,14 +26,28 @@ const getAuthToken = async (authCode: string): Promise<Result<string>> => {
             throw Error("No authentication token data recieved.");
         }
 
-        console.log("getAuthToken Success", response.data);
-        return Result.ok<string>("we good");
+        return Result.ok<AuthTokenResponse>(response.data);
     } catch (error) {
-        return Result.fail<string>(error.message);
+        return Result.fail<AuthTokenResponse>(error.message);
     }
 };
 
 // #endregion Functions
+
+// -----------------------------------------------------------------------------------------
+// #region Private Functions
+// -----------------------------------------------------------------------------------------
+
+const _getAuthTokenRequestData = (authCode: string): AuthTokenRequestData => {
+    return {
+        client_id: (stravaConfig?.clientId as string) ?? "",
+        client_secret: (stravaConfig?.clientSecret as string) ?? "",
+        code: authCode,
+        grant_type: "authorization_code",
+    };
+};
+
+// #endregion Private Functions
 
 // -----------------------------------------------------------------------------------------
 // #region Exports
