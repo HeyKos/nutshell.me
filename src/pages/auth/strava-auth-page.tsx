@@ -17,6 +17,10 @@ const StravaAuthPage: React.FC = () => {
 
     const stravaAuth = StravaAuth.fromUrlParams(useQuery());
 
+    // Once we have the auth data, we should make a request for an auth token.
+    // Once we have the token data, we can persist it in firebase.
+    // Finally, once that's all done we can direct the user back to the profile page.
+
     // #endregion Constants
 
     // ---------------------------------------------------x--------------------------------------
