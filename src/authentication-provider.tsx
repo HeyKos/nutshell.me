@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase-init";
-import { AuthenticationContextProperties } from "types";
+import { AuthenticationContextProperties } from "types/types";
 
 export const AuthenticationContext = React.createContext<
     Partial<AuthenticationContextProperties>
