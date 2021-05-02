@@ -5,7 +5,8 @@ const _getQueryParameter = (
     if (!params.has(parameterName)) {
         return "";
     }
-    return params.get(parameterName);
+
+    return params.get(parameterName) ?? "";
 };
 
 const URLUtils = {
