@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "types/types";
+import { Route } from "types/system-types";
 import { Route as ReactRoute } from "react-router-dom";
 
 export interface RouteWrapperProps {
