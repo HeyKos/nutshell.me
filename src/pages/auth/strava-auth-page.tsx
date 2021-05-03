@@ -10,6 +10,9 @@ import TableBody from "@material-ui/core/TableBody";
 import useQuery from "hooks/use-query";
 import StravaAuth from "models/strava-auth";
 import StravaService from "services/strava-service";
+import UserConnectorsService from "services/user-connectors-service";
+import { AuthTokenResponse } from "types/strava-types";
+import UserConnector from "models/user-connector";
 
 const StravaAuthPage: React.FC = () => {
     // -----------------------------------------------------------------------------------------
@@ -19,15 +22,39 @@ const StravaAuthPage: React.FC = () => {
     const stravaAuth = StravaAuth.fromUrlParams(useQuery());
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const [tokenData, setTokenData] = useState(null as any);
+    const [tokenData, setTokenData] = useState(
+        null as AuthTokenResponse | null
+    );
     useEffect(() => {
+        // Once we have the auth data, we should make a request for an auth token.
         StravaService.getAuthToken(stravaAuth.code).then((result) => {
-            setTokenData(result);
+            // TODO: Add proper error handling.
+            if (result.isFailure) {
+                return;
+            }
+            const authTokenData = result.getValue();
+            if (authTokenData == null) {
+                return;
+            }
+            setTokenData(authTokenData);
         });
     }, []);
+    useEffect(() => {
+        if (tokenData == null) {
+            return;
+        }
+        const connector = new UserConnector(
+            "",
+            "ReplaceThisWithAuthenicatedUserId",
+            "strava",
+            tokenData
+        );
+        // Once we have the token data, we can persist it in firebase.
+        UserConnectorsService.create(connector).then((response) => {
+            console.log("Created Strava User Connector", response);
+        });
+    }, [tokenData]);
 
-    // Once we have the auth data, we should make a request for an auth token.
-    // Once we have the token data, we can persist it in firebase.
     // Finally, once that's all done we can direct the user back to the profile page.
 
     // #endregion Constants
