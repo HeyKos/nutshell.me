@@ -54,7 +54,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = (
                 <Grid
                     container
                     direction="row"
-                    justify="space-between"
+                    justifyContent="space-between"
                     alignItems="center">
                     <Grid item>
                         <Grid container alignItems="center">
