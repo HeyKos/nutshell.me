@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "firebase";
+import { User } from "firebase/auth";
 
 export type Route = {
     path: string;
@@ -13,10 +13,10 @@ export type Route = {
 // -----------------------------------------------------------------------------------------
 
 export type AuthenticationContextProperties = {
-    user: firebase.User | null;
+    user: User | null;
     isAuthenticated: boolean;
     loadingAuthState: boolean;
-    setUser: React.Dispatch<React.SetStateAction<firebase.User | null>>;
+    setUser: React.Dispatch<React.SetStateAction<User | null>>;
 };
 
 // #endregion Authentication

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebase from "firebase-init";
+import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { AuthenticationContextProperties } from "types";
 
 export const AuthenticationContext = React.createContext<
@@ -15,7 +15,7 @@ export const AuthenticationProvider: React.FC = ({ children }: any) => {
     // #region Hooks
     // -----------------------------------------------------------------------------------------
 
-    const [user, setUser] = useState(null as firebase.User | null);
+    const [user, setUser] = useState<User | null>(null);
     const [loadingAuthState, setLoadingAuthState] = useState(true);
     const isAuthenticated: boolean = user != null;
     const providerContextProps: AuthenticationContextProperties = {
@@ -25,10 +25,10 @@ export const AuthenticationProvider: React.FC = ({ children }: any) => {
         user,
     };
 
-    useEffect(
-        () => firebase.auth().onAuthStateChanged(authStateChangedHandler),
-        []
-    );
+    useEffect(() => {
+        const auth = getAuth();
+        return onAuthStateChanged(auth, authStateChangedHandler);
+    }, []);
 
     // #endregion Hooks
 
@@ -36,11 +36,11 @@ export const AuthenticationProvider: React.FC = ({ children }: any) => {
     // #region Functions
     // -----------------------------------------------------------------------------------------
 
-    const authStateChangedHandler = async (user: firebase.User | null) =>
+    const authStateChangedHandler = async (user: User | null) =>
         updateAuthenticationData(user, false);
 
     const updateAuthenticationData = (
-        user: firebase.User | null,
+        user: User | null,
         isLoading: boolean
     ) => {
         setUser(user);
