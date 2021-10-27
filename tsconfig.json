@@ -19,5 +19,5 @@
         "target": "ESNext",
         "types": ["vite/client", "jest"],
     },
-    "include": ["src"],
+    "include": ["src", "env.d.ts"],
 }

@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Button from "@material-ui/core/Button";
 import firebase from "firebase-init";
-import "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 export interface MainNavigationProps {
     isAuthenticated: boolean;
@@ -21,20 +21,17 @@ export const MainNavigation: React.FC<MainNavigationProps> = (
     // #region Functions
     // -----------------------------------------------------------------------------------------
 
+    const auth = getAuth(firebase);
     const onSignInClick = () => authenticateWithGoogle();
 
-    const onSignOutClick = () => firebase.auth().signOut();
+    const onSignOutClick = () => auth.signOut();
 
     const authenticateWithGoogle = () => {
-        const provider = new firebase.auth.GoogleAuthProvider();
+        const provider = new GoogleAuthProvider();
 
-        firebase
-            .auth()
-            .signInWithPopup(provider)
+        signInWithPopup(auth, provider)
             .then((result) => {
-                const credential = result.credential;
                 const user = result.user;
-                console.log("credential", credential?.toJSON());
                 console.log("user", user?.toJSON());
             })
             .catch((error) => {
