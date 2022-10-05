@@ -7,15 +7,17 @@ const AuthenticatedRoute: React.FC<RouteProps> = (props: RouteProps) => {
 
     return (
         <Route>
-            {isAuthenticated && props.children}
-            {!isAuthenticated && (
-                <Redirect
-                    to={{
-                        pathname: "/forbidden",
-                        state: { from: props.location },
-                    }}
-                />
-            )}
+            <>
+                {isAuthenticated && props.children}
+                {!isAuthenticated && (
+                    <Redirect
+                        to={{
+                            pathname: "/forbidden",
+                            state: { from: props.location },
+                        }}
+                    />
+                )}
+            </>
         </Route>
     );
 };

@@ -9,12 +9,10 @@ export const AuthenticationContext = React.createContext<
     loadingAuthState: true,
 });
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const AuthenticationProvider: React.FC = ({ children }: any) => {
-    // -----------------------------------------------------------------------------------------
-    // #region Hooks
-    // -----------------------------------------------------------------------------------------
-
+export const AuthenticationProvider = ({
+    children,
+}: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+any): JSX.Element | null => {
     const [user, setUser] = useState<User | null>(null);
     const [loadingAuthState, setLoadingAuthState] = useState(true);
     const isAuthenticated: boolean = user != null;
@@ -30,12 +28,6 @@ export const AuthenticationProvider: React.FC = ({ children }: any) => {
         return onAuthStateChanged(auth, authStateChangedHandler);
     }, []);
 
-    // #endregion Hooks
-
-    // -----------------------------------------------------------------------------------------
-    // #region Functions
-    // -----------------------------------------------------------------------------------------
-
     const authStateChangedHandler = async (user: User | null) =>
         updateAuthenticationData(user, false);
 
@@ -47,12 +39,6 @@ export const AuthenticationProvider: React.FC = ({ children }: any) => {
         setLoadingAuthState(isLoading);
     };
 
-    // #endregion Functions
-
-    // -----------------------------------------------------------------------------------------
-    // #region Render
-    // -----------------------------------------------------------------------------------------
-
     if (loadingAuthState) {
         return null;
     }
@@ -62,6 +48,4 @@ export const AuthenticationProvider: React.FC = ({ children }: any) => {
             {children}
         </AuthenticationContext.Provider>
     );
-
-    // #endregion Render
 };
