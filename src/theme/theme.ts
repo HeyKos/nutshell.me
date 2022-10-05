@@ -1,10 +1,9 @@
-import createTheme from "@material-ui/core/styles/createTheme";
-import colors from "theme/colors";
+import createTheme from "@mui/material/styles/createTheme";
+import { colors } from "theme/colors";
 import sizes from "theme/sizes";
 
 const theme = createTheme({
     palette: {
-        type: "light",
         primary: {
             main: colors.primary,
         },
@@ -55,12 +54,14 @@ const theme = createTheme({
             fontWeight: "lighter",
         },
     },
-    overrides: {
+    components: {
         MuiButton: {
-            contained: {
-                backgroundColor: colors.white,
-                "&:hover": {
-                    backgroundColor: colors.secondary,
+            styleOverrides: {
+                contained: {
+                    backgroundColor: colors.white,
+                    "&:hover": {
+                        backgroundColor: colors.secondary,
+                    },
                 },
             },
         },

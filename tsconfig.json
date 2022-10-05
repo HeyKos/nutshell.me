@@ -17,7 +17,7 @@
         "sourceMap": true,
         "strict": true,
         "target": "ESNext",
-        "types": ["vite/client", "jest"],
+        "types": ["vite/client", "jest"]
     },
-    "include": ["src", "env.d.ts"],
+    "include": ["src", "env.d.ts"]
 }
