@@ -1,13 +1,15 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import ButtonBase from "@material-ui/core/ButtonBase";
-import Button from "@material-ui/core/Button";
 import firebase from "firebase-init";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+    AppBar,
+    Avatar,
+    Button,
+    ButtonBase,
+    Grid,
+    Toolbar,
+    Typography,
+} from "@mui/material";
 
 export interface MainNavigationProps {
     isAuthenticated: boolean;
@@ -69,7 +71,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = (
                         {!isAuthenticated && (
                             <Button
                                 variant="contained"
-                                color="default"
+                                color="primary"
                                 onClick={onSignInClick}>
                                 Sign In
                             </Button>
@@ -77,7 +79,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = (
                         {isAuthenticated && (
                             <Button
                                 variant="contained"
-                                color="default"
+                                color="primary"
                                 onClick={onSignOutClick}>
                                 Sign Out
                             </Button>
